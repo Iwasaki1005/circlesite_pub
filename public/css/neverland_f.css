@@ -1,0 +1,909 @@
+
+/*--------------------------------------------------------------------------
+ *
+ * body
+ *
+ *
+--------------------------------------------------------------------------*/
+
+html {
+	overflow: overlay;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	background: #fafafa;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
+	line-height: 150%;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------------------
+ *
+ * Z-index
+ *
+ *
+--------------------------------------------------------------------------*/
+
+.bg-effect {
+	z-index: -1;
+}
+.bt-index {
+	display: block;
+	z-index: 10;
+}
+
+#drawer-menu {
+	z-index: 20;
+}
+
+.globalmenu {
+	z-index: 30;
+}
+
+#news {
+	z-index: 10;
+}
+
+.news-share-twitterbt {
+	z-index: 10;
+}
+
+.news-share-twitterbt-position {
+	z-index: 8;
+}
+
+.theme--light.v-timeline .v-timeline-item__dot {
+	z-index: 1;
+}
+
+
+/*--------------------------------------------------------------------------
+ *
+ * fonts
+ *
+ *
+--------------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+body {
+	font-family: Kosugi Maru, sans-serif;
+}
+
+.font-E1 {
+	font-family: 'Varela Round', sans-serif;
+}
+
+.font-E2 {
+	font-family: Libre Baskerville, serif;
+}
+
+.font-E3 {
+	font-family: 'Allura', cursive;
+}
+
+.font-J1 {
+	font-family: Kosugi Maru, sans-serif;
+}
+
+/*--------------------------------------------------------------------------
+ *
+ * color
+ *
+ *
+--------------------------------------------------------------------------*/
+
+.co-black {
+	color: #333;
+}
+
+.co-white {
+	color: #fafafa;
+}
+
+.co-brown {
+	color: #e7b06c;
+}
+
+.co-pink {
+	color: #ff4d91;
+}
+
+.co-error {
+	color: #fa536a;
+}
+
+.co-grey {
+	color: #9b9b9b;
+}
+
+a {
+	color: #42b983;
+}
+
+
+/*--------------------------------------------------------------------------
+ *
+ * generic
+ *
+ *
+--------------------------------------------------------------------------*/
+
+.vertical-text {
+	writing-mode: vertical-rl;
+	color: #ffdbae;
+	font-size: 2rem;
+}
+
+.bg-none {
+	background-color: transparent;
+}
+
+.isdisable {
+	opacity: 0.4; /*透明度を下げる*/
+	pointer-events: none; /*クリック無効にする*/
+	cursor: not-allowed;
+}
+
+.isdisable_grey {
+	opacity: 0.2;
+	color: grey!important;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+.img-zoom {
+	transition:1s all;
+}
+
+.img-zoom:hover {
+	transform:scale(1.1,1.1);
+	transition:0.5s all;
+}
+
+.hover-flash {
+	opacity: 1;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+
+.hover-flash::before {
+	background-color: #fafafa;
+	content: "";
+	display: block;
+	position: absolute;
+	top: -7vw;
+	left: 0;
+	width: 2vw;
+	height: 100%;
+	opacity: 0;
+	transition: cubic-bezier(0.32, 0, 0.67, 0);
+}
+
+.hover-flash:hover::before {
+	animation: hover-flash-anime 0.5s linear 1;
+}
+   
+@keyframes hover-flash-anime {
+	0% {
+		transform: scale(2) rotate(45deg);
+		opacity: 0;
+	}
+	20% {
+		transform: scale(20) rotate(45deg);
+		opacity: 0.6;
+	}
+	40% {
+		transform: scale(30) rotate(45deg);
+		opacity: 0.4;
+	}
+	80% {
+		transform: scale(45) rotate(45deg);
+		opacity: 0.2;
+	}
+	100% {
+	  transform: scale(50) rotate(45deg);
+		opacity: 0;
+	}
+}
+
+
+
+/* 後でmasterに */
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+
+
+/*--------------------------------------------------------------------------
+ *
+ * font-size
+ *
+ *
+--------------------------------------------------------------------------*/
+
+.fs-1_2rem {
+	font-size: 1.2rem;
+}
+
+.fs-2_5rem {
+	font-size: 2.5rem;
+}
+
+.fs-0_8rem {
+	font-size: 0.8rem;
+}
+
+.fs-normal {
+	font-size: 1rem;
+}
+
+.fs-h3nomal {
+	font-size: 1rem!important;
+	line-height: 150%;
+	font-weight: normal;
+}
+
+.lh-110 {
+	line-height: 110%;
+}
+
+.lh-120 {
+	line-height: 120%;
+}
+
+
+/*--------------------------------------------------------------------------
+ *
+ * scrollbar
+ *
+ *
+--------------------------------------------------------------------------*/
+
+html.scrollbar {
+	overflow-y: hidden;
+}
+
+html::-webkit-scrollbar {
+	width: 0.8vw;
+}
+
+/* スクロールの背景の設定 */
+html::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+/* スクロールのつまみ部分の設定 */
+html::-webkit-scrollbar-thumb {
+	border-radius: 2vw;
+	background: #ffdbae;
+	border: 0.2vw solid #fafafa;
+}
+
+
+/*--------------------------------------------------------------------------
+ *
+ * scrollanime
+ *
+ *
+--------------------------------------------------------------------------*/
+
+.sa {
+	opacity: 0;
+	transition: all .8s ease;
+}
+
+.sa.show {
+	opacity: 1;
+	transform: none;
+}
+  
+.sa--up {
+	transform: translate(0, 10vh);
+}
+
+.v-line {
+	font-size: 0.5rem;
+	margin-left: 2rem;
+}
+
+
+/*--------------------------------------------------------------------------
+ *
+ * displayのみ適応(範囲は仮設定)
+ *
+ *
+--------------------------------------------------------------------------*/
+
+@media screen and (min-aspect-ratio: 1/1) { 
+	.section {
+		width: 80%;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 30vh;
+	}
+	
+	.section-2 {
+		width: 70%;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 40vh;
+	}
+
+	.co-black_dis {
+		color: #333;
+	}
+	
+	.co-white_dis {
+		color: #fafafa;
+	}
+	
+	.co-brown_dis {
+		color: #e7b06c;
+	}
+	
+	.co-pink_dis {
+		color: #ff4d91;
+	}
+	
+	.co-grey_dis {
+		color: #9b9b9b;
+	}
+
+
+
+
+	.fs-1_2rem_dis {
+		font-size: 1.2rem;
+	}
+	
+	.fs-2_5rem_dis {
+		font-size: 2.5rem;
+	}
+	
+	.fs-0_8rem_dis {
+		font-size: 0.8rem;
+	}
+
+	.fs-normal_dis {
+		font-size: 1rem;
+	}
+	
+	.lh-110_dis {
+		line-height: 110%;
+	}
+	
+	.lh-120_dis {
+		line-height: 120%;
+	}
+
+	.article-container {
+		width: 80%;
+		padding: 8vh 6vw;
+		margin: 5vh auto;
+		background-color: #fafafa;
+		box-shadow: 0 0 0.5vw #ddd;
+	}
+
+	.tag-dmy {
+		background-color: red;
+		color: #fafafa;
+		text-align: center;
+		width: 2.6rem;
+		height: 1.2rem;
+		margin: 0.1rem;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+		font-family: 'Varela Round', sans-serif;
+	}
+	
+	.tag-dmy-small {
+		background-color: red;
+		color: #fafafa;
+		text-align: center;
+		width: 2rem;
+		height: 1rem;
+		margin: 0.1rem;
+		border-radius: 10%;
+		font-size: 0.6rem;
+		line-height: 1rem;
+		font-family: 'Varela Round', sans-serif;
+	}
+	
+	.tag-info {
+		background-color: #ff4d91;
+		color: #fafafa;
+		text-align: center;
+		width: 2.6rem;
+		margin: 0.1rem;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+		font-family: 'Varela Round', sans-serif;
+	}
+	
+	.tag-info-small {
+		background-color: #ff4d91;
+		color: #fafafa;
+		text-align: center;
+		width: 2rem;
+		height: 1rem;
+		margin: 0.1rem;
+		border-radius: 10%;
+		font-size: 0.6rem;
+		line-height: 1rem;
+		font-family: 'Varela Round', sans-serif;
+	}
+	
+	.tag-3 {
+		background-color: #AA96DA;
+		text-align: center;
+		width: 100%;
+		margin: 15% auto;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+	}
+	
+	.tag-4 {
+		background-color: #A8D8EA;
+		text-align: center;
+		width: 100%;
+		margin: 15% auto;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+	}
+	
+	.tag-5 {
+		background-color: #FFFFD2;
+		text-align: center;
+		width: 100%;
+		margin: 15% auto;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+	}
+
+	/*--------------------------------------------------------------------------
+	*
+	* button
+	*
+	 *
+	--------------------------------------------------------------------------*/
+
+	.bt-typeA {
+		display: inline-block;
+		color: #e7b06c;
+		text-decoration: none;
+		border: 0.1vw solid transparent;
+		padding: 1.2vw 4vw;
+		position: relative;
+		width: 20vw;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.bt-typeA-border::after,
+	.bt-typeA-border::before,
+	.bt-typeA-border-inner::after,
+	.bt-typeA-border-inner::before {
+		background-color: #e7b06c;
+		content: '';
+		display: block;
+		position: absolute;
+		transition: all .3s ease;
+		-webkit-transition: all .3s ease;
+	}
+
+	.bt-typeA-border::after {
+		width: 0px;
+		height: 0.1vw;
+		top: -0.1vw;
+		left: -0.1vw;
+	}
+
+	.bt-typeA-border::before {
+		width: 0px;
+		height: 0.1vw;
+		right: -0.1vw;
+		bottom: -0.1vw;
+	}
+
+	.bt-typeA-border-inner::after {
+		width: 0.1vw;
+		height: 0.1vw;
+		left: -0.1vw;
+		bottom: -0.1vw;
+	}
+
+	.bt-typeA-border-inner::before {
+		width: 0.1vw;
+		height: 0.1vw;
+		top: -0.1vw;
+		right: -0.1vw;
+	}
+
+	.bt-typeA-border:hover::after,
+	.bt-typeA-border:hover::before {
+		width: 100%;
+		width: calc(100% + 0.1vw);
+	}
+
+	.bt-typeA-border:hover .bt-typeA-border-inner::after,
+	.bt-typeA-border:hover .bt-typeA-border-inner::before {
+		height: 100%;
+		height: calc(100% + 0.1vw);
+	}
+
+	.index-anime {
+		overflow: hidden;
+		transform: translate(-100%, 0);
+		transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
+	}
+
+	.index-anime span {
+		display: block;
+		transform: translate(100%, 0);
+		transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
+	}
+
+	.index-anime.-visible,
+	.index-anime.-visible span {
+		transform: translate(0, 0);
+	}
+
+	.fadeout {
+		animation : fadeOut 1s;
+		animation-fill-mode: both;
+	}
+	@keyframes fadeOut {
+		0% {
+		opacity: 1;
+		}
+		100% {
+		opacity: 0;
+		}
+	}
+
+	.vertical-line {
+		background-color: #e7b06c;
+		width: 0.15vw;
+		height: 10vw;
+		margin-bottom: 3em;
+	}
+
+	:root {
+		font-size: 1.4vw;
+		color: #333;
+	}
+
+	h2 {
+		font-size: 6rem;
+		font-weight: normal;
+		margin: 0;
+		color: #e7b06c;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+	}
+}
+
+/*--------------------------------------------------------------------------
+ *
+ * mobileのみ適応(範囲は仮設定)
+ *
+ *
+--------------------------------------------------------------------------*/
+
+@media screen and (max-aspect-ratio: 1/1) {
+	.section {
+		width: 80%;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 25vh;
+	}
+	
+	.section-2 {
+		width: 70%;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 40vh;
+	}
+
+	.co-black_mob {
+		color: #333;
+	}
+	
+	.co-white_mob {
+		color: #fafafa;
+	}
+	
+	.co-brown_mob {
+		color: #e7b06c;
+	}
+	
+	.co-pink_mob {
+		color: #ff4d91;
+	}
+	
+	.co-grey_mob {
+		color: #9b9b9b;
+	}
+
+
+
+	.fs-1_2rem_mob {
+		font-size: 1.2rem;
+	}
+	
+	.fs-2_5rem_mob {
+		font-size: 2.5rem;
+	}
+	
+	.fs-0_8rem_mob {
+		font-size: 0.8rem;
+	}
+
+	.fs-normal_mob {
+		font-size: 1rem;
+	}
+	
+	.lh-110_mob {
+		line-height: 110%;
+	}
+	
+	.lh-120_mob {
+		line-height: 120%;
+	}
+
+
+
+
+	.article-container {
+		width: 90%;
+		padding: 3vh 5vw;
+		margin: 3vh auto;
+		background-color: #fafafa;
+		box-shadow: 0 0 0.5vw #ddd;
+	}
+
+
+
+
+
+
+	.tag-dmy {
+		background-color: red;
+		color: #fafafa;
+		text-align: center;
+		width: 2.6rem;
+		height: 1.2rem;
+		margin: 0.1rem;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+		font-family: 'Varela Round', sans-serif;
+	}
+	
+	.tag-info {
+		background-color: #ff4d91;
+		color: #fafafa;
+		text-align: center;
+		width: 2.6rem;
+		margin: 0.1rem;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+		font-family: 'Varela Round', sans-serif;
+	}
+	
+	.tag-dmy-small {
+		background-color: red;
+		color: #fafafa;
+		text-align: center;
+		width: 2.4rem;
+		height: 1rem;
+		margin: 0.1rem;
+		border-radius: 10%;
+		font-size: 0.6rem;
+		line-height: 1rem;
+		font-family: 'Varela Round', sans-serif;
+	}
+	
+	.tag-info-small {
+		background-color: #ff4d91;
+		color: #fafafa;
+		text-align: center;
+		width: 2.4rem;
+		height: 1rem;
+		margin: 0.1rem;
+		border-radius: 10%;
+		font-size: 0.6rem;
+		line-height: 1rem;
+		font-family: 'Varela Round', sans-serif;
+	}
+	
+	.tag-3 {
+		background-color: #AA96DA;
+		text-align: center;
+		width: 100%;
+		margin: 15% auto;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+	}
+	
+	.tag-4 {
+		background-color: #A8D8EA;
+		text-align: center;
+		width: 100%;
+		margin: 15% auto;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+	}
+	
+	.tag-5 {
+		background-color: #FFFFD2;
+		text-align: center;
+		width: 100%;
+		margin: 15% auto;
+		border-radius: 10%;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+	}
+
+
+	/*--------------------------------------------------------------------------
+	*
+	* button
+	*
+	*
+	--------------------------------------------------------------------------*/
+
+	.bt-typeA {
+		display: inline-block;
+		color: #e7b06c;
+		text-decoration: none;
+		border: 0.1vw solid transparent;
+		padding: 2.4vw 6vw;
+		position: relative;
+		width: 40vw;
+		text-align: center;
+	}
+
+	.bt-typeA-border::after,
+	.bt-typeA-border::before,
+	.bt-typeA-border-inner::after,
+	.bt-typeA-border-inner::before {
+		background-color: #e7b06c;
+		content: '';
+		display: block;
+		position: absolute;
+		transition: all .3s ease;
+		-webkit-transition: all .3s ease;
+	}
+
+	.bt-typeA-border::after {
+		width: 0px;
+		height: 0.1vw;
+		top: -0.1vw;
+		left: -0.1vw;
+	}
+
+	.bt-typeA-border::before {
+		width: 0px;
+		height: 0.1vw;
+		right: -0.1vw;
+		bottom: -0.1vw;
+	}
+
+	.bt-typeA-border-inner::after {
+		width: 0.1vw;
+		height: 0.1vw;
+		left: -0.1vw;
+		bottom: -0.1vw;
+	}
+
+	.bt-typeA-border-inner::before {
+		width: 0.1vw;
+		height: 0.1vw;
+		top: -0.1vw;
+		right: -0.1vw;
+	}
+
+	.bt-typeA-border:hover::after,
+	.bt-typeA-border:hover::before {
+		width: 100%;
+		width: calc(100% + 0.1vw);
+	}
+
+	.bt-typeA-border:hover .bt-typeA-border-inner::after,
+	.bt-typeA-border:hover .bt-typeA-border-inner::before {
+		height: 100%;
+		height: calc(100% + 0.1vw);
+	}
+
+	.index-anime {
+		overflow: hidden;
+		transform: translate(-100%, 0);
+		transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
+	}
+
+	.index-anime span {
+		display: block;
+		transform: translate(100%, 0);
+		transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
+	}
+
+	.index-anime.-visible,
+	.index-anime.-visible span {
+		transform: translate(0, 0);
+	}
+
+	.fadeout {
+		animation : fadeOut 1s;
+		animation-fill-mode: both;
+	}
+
+	@keyframes fadeOut {
+		0% {
+		opacity: 1;
+		}
+		100% {
+		opacity: 0;
+		}
+	}
+
+	.vertical-line {
+		background-color: #e7b06c;
+		width: 0.15vw;
+		height: 10vw;
+		margin-bottom: 3em;
+	}
+
+
+	:root {
+		font-size: 3.4vw;
+		color: #333;
+	}
+
+	h2 {
+		font-size: 6rem;
+		font-weight: normal;
+		margin: 0;
+		color: #e7b06c;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+	}
+}
